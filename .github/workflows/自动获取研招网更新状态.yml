@@ -30,7 +30,6 @@ jobs:
       - name: "install dependencies"
         run: |
           # 更新pip
-          python -m pip install --upgrate pip
           pip install requests
      
       # 运行脚本
