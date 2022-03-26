@@ -1,0 +1,39 @@
+# 这是帮助您开始操作的基本工作流程
+
+name: CI
+
+# 控制何时运行工作流
+on:
+  schedule:
+    - cron: '15 * * * *'
+
+# 工作流运行由一个或多个作业组成，这些作业可以顺序或并行运行
+jobs:
+  # 这个工作流包含一个名为“job1”的作业。
+  job1:
+    # 作业将在其上运行的系统
+    runs-on: ubuntu-latest
+
+    # 步骤表示将作为作业的一部分执行的任务序列
+    steps:
+      # 克隆仓库
+      - name: "Checkout codes"
+        uses: actions/checkout@v2
+        
+      # 初始化Python环境
+      - name: "Setup Python"
+        uses: actions/setup-python@master
+        with:
+          python -version: 3.8
+      
+      # 下载对应库
+      - name: "install dependencies"
+        run: |
+          # 更新pip
+          python -m pip install --upgrate pip
+          pip install requests
+     
+      # 运行脚本
+      - name: "run Python"
+        run: |
+          python ./自动化爬取研招网更新状态/web_spider.py
