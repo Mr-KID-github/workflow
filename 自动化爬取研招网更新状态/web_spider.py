@@ -39,7 +39,6 @@ def askURL(url):
             push(1)
             print("更新啦")
         else:
-            push(0)
             print("未更新")
     except urllib.error.URLError as e:
         if hasattr(e,"code"):       #判断e对象是否包含对应的属性
