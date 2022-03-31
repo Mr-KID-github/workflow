@@ -35,7 +35,7 @@ def askURL(url):
         print(html)       #测试：查看电影全部页面HTML
 
         date = time.strftime('%Y-%m-%d',time.localtime(time.time()))
-        if date in html:
+        if date in html and '海南师范大学' in html:
             push(1)
             print("更新啦")
         else:
