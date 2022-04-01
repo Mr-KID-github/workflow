@@ -22,7 +22,7 @@ jobs:
         
       # 初始化Python环境
       - name: "Setup Python"
-        uses: actions/setup-python@3.0.0
+        uses: actions/setup-python@master
         with:
           python-version: 3.8
       
