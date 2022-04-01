@@ -21,10 +21,11 @@ jobs:
         uses: actions/checkout@v2
         
       # 初始化Python环境
-      - name: "Setup Python"
-        uses: actions/setup-python@master
+      - uses: actions/checkout@master
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: 3.7
       
       # 下载对应库
       - name: "install dependencies"
